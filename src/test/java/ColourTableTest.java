@@ -27,6 +27,13 @@ public class ColourTableTest {
         table.addColour(0, 255, 0);
         assertThrows(IllegalStateException.class, () -> table.addColour(0, 0, 255)); // Exceeds capacity
     }
+    @Test
+    void testAddInvalidRGBValues() {
+        ColourTable table = new ColourTable(4);
+        assertThrows(IllegalArgumentException.class, () -> table.addColour(256, 0, 0)); // Invalid red
+        assertThrows(IllegalArgumentException.class, () -> table.addColour(0, -1, 0)); // Invalid green
+        assertThrows(IllegalArgumentException.class, () -> table.addColour(0, 0, 300)); // Invalid blue
+    }
 
 
 }
