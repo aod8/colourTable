@@ -13,6 +13,13 @@ public class ColourTableTest {
     void testConstructorWithInvalidSize() {
         assertThrows(IllegalArgumentException.class, () -> new ColourTable(3));//Invalid Size (Not power of 2)
     }
+    @Test
+    void testAddValidColour(){
+        ColourTable table=new ColourTable(4);
+        table.addColour(255,0,0);//Red
+        table.addColour(0,255,0);//Green
+        assertEquals(2,table.getCurrentCount());
+    }
 
 }
 

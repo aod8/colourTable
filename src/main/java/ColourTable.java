@@ -4,6 +4,7 @@ import java.util.List;
 public class ColourTable {
 
     private final int paletteSize;
+    private final List<int[]> colours=new ArrayList<>();
 
     /**
      * Constructs a ColourTable with a specified palette size
@@ -33,6 +34,13 @@ public class ColourTable {
         if (size <= 1 || (size & (size - 1)) != 0) {
             throw new IllegalArgumentException("Palette size must be a power of two and greater than 1.");
         }
+
+    }
+    public void addColour(int red,int green,int blue){
+
+    }
+    public int getCurrentCount(){
+        return 0;
     }
 }
 
