@@ -20,6 +20,13 @@ public class ColourTableTest {
         table.addColour(0,255,0);//Green
         assertEquals(2,table.getCurrentCount());
     }
+    @Test
+    void testAddExceedsCapacity() {
+        ColourTable table = new ColourTable(2);
+        table.addColour(255, 0, 0);
+        table.addColour(0, 255, 0);
+        assertThrows(IllegalStateException.class, () -> table.addColour(0, 0, 255)); // Exceeds capacity
+    }
 
 
 }
