@@ -80,7 +80,7 @@ public class ColourTable {
         }
     }
     public List<int[]> getColours() {
-        return new ArrayList<>();
+        return new ArrayList<>(colours);//Return a copy for imutability
     }
 }
 
