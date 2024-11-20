@@ -37,10 +37,16 @@ public class ColourTable {
 
     }
     public void addColour(int red,int green,int blue){
-
+        if (colours.size()>=paletteSize){
+            throw new IllegalStateException("Palette is full.");
+        }
+        if (red<0||red>255||green<0||green>255||blue<0||blue>255){
+            throw new IllegalStateException("Invalid RGB value.");
+        }
+        colours.add(new int[]{red,green,blue});
     }
     public int getCurrentCount(){
-        return 0;
+        return colours.size();
     }
 }
 
