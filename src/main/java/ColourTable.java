@@ -79,6 +79,9 @@ public class ColourTable {
             throw new IllegalArgumentException("Invalid RGB value: each component must be between 0 and 255.");
         }
     }
+    public List<int[]> getColours() {
+        return new ArrayList<>();
+    }
 }
 
 
